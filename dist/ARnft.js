@@ -1319,7 +1319,7 @@
               const e = document.createElement("video");
               (e.id = "video"),
                 e.setAttribute("autoplay", ""),
-                e.setAttribute("muted", ""),
+                //e.setAttribute("muted", ""),
                 e.setAttribute("playsinline", ""),
                 A.appendChild(e),
                 A.appendChild(t);
