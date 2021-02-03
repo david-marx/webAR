@@ -34,6 +34,6 @@
     "fov": "0.8 * 180 / Math.PI",
     "ratio": "window.clientWidth / window.clientHeight",
     "near": 0.01,
-    "far": 2000
+    "far": 4000
   }
 }
