@@ -10,6 +10,7 @@
 			<video
 				loop
 				autoplay
+				muted
 				webkit-playsinline
 				playsinline
 				crossOrigin="anonymous"
@@ -23,7 +24,7 @@
     <script>
 			ARnft.ARnft.init(640, 480, "webAR/DataNFT/Visitenkarte_Webdemo_dancingman", 'config.json', true)
 			.then((nft) => {
-				nft.addVideo('arvideo', 0.36, 1051, 697);
+				nft.addVideo('arvideo', 0.35, 1051, 697);
 			}).catch((error) => {
 				console.log(error);
 			});
