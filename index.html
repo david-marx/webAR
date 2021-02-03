@@ -19,7 +19,20 @@
         </select>
         <input type="button" value="change image" onclick="changeImage()" />
       </fieldset>
-    </form>
+		</form>
+		
+		<form action="" class="ui audioButton">
+      <h3>Activate Sound</h3>
+      <fieldset>
+        <input type="button" value="Activate Sound" onclick="activateSound()" />
+      </fieldset>
+		</form>
+		
+		<script type="text/javascript">
+      function activateSound() {
+				document.getElementById("arvideo").muted = false;
+      } // end function
+		</script>
 
     <script type="text/javascript">
       function changeImage() {
@@ -33,8 +46,8 @@
 		<script type="text/javascript">
       function initializeAR() {
         ARnft.ARnft.init(
-        640,
-				480,
+        320,
+				240,
 				//"webAR/DataNFT/Visitenkarte_Webdemo_dancingman",
 				changeNFT(document.getElementById("selImage").value),
         "config.json",
