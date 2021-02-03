@@ -1,6 +1,6 @@
 {
   "addPath": "",
-  "cameraPara": "Data/camera_para.dat",
+  "cameraPara": "webAR/Data/camera_para.dat",
   "videoSettings": {
     "width": {
       "min": 640,
