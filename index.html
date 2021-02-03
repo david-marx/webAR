@@ -1,34 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>ARnft example showing a video</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1">
-	<link rel="stylesheet" href="css/nft-style.css">
-</head>
-<body>
-			<video
-				loop
-				autoplay
-				muted
-				webkit-playsinline
-				playsinline
-				crossOrigin="anonymous"
-				id="arvideo">
-				<source src="Data/DancingMan.mp4" type='video/mp4'>
-			</video>
+  <head>
+    <meta charset="utf-8" />
+    <title>ARnft example showing a video</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="css/nft-style.css" />
+  </head>
+  <body>
+    <form action="" class="ui marker">
+      <h3>Please select an Image</h3>
+      <fieldset>
+        <select id="selImage">
+          <option value="Data/openpose.mp4">Open Pose Dave</option>
+          <option value="Data/DancingMan.mp4">Dancing Man</option>
+        </select>
+        <input type="button" value="change image" onclick="changeImage()" />
+      </fieldset>
+    </form>
 
-		<script src="js/third_party/three.js/three.min.js"></script>
-		<script src="dist/ARnft.js"></script>
+    <script type="text/javascript">
+      // from dropdownList.html
+      function changeImage() {
+        var selImage = document.getElementById("selImage");
+        var imagePath = selImage.value;
+				document.getElementById("arvideo").src = imagePath;
+
+				imagePath === "Data/DancingMan.mp4" ? changeNFT("webAR/DataNFT/Visitenkarte_Webdemo_dancingman") : changeNFT("webAR/DataNFT/openpose_bw");
+      } // end function
+    </script>
+
+    <video
+      loop
+      autoplay
+      muted
+      webkit-playsinline
+      playsinline
+      crossorigin="anonymous"
+      id="arvideo"
+    >
+      <source src="Data/DancingMan.mp4" type="video/mp4" />
+    </video>
+
+    <script src="js/third_party/three.js/three.min.js"></script>
+    <script src="dist/ARnft.js"></script>
 
     <script>
-			ARnft.ARnft.init(640, 480, "webAR/DataNFT/Visitenkarte_Webdemo_dancingman", 'config.json', true)
-			.then((nft) => {
-				nft.addVideo('arvideo', 0.35, 1051, 697);
-			}).catch((error) => {
-				console.log(error);
-			});
-    </script>
-</body>
+			function changeNFT(pathNFT) {
+        var nftPath = pathNFT
+      } 
 
+      ARnft.ARnft.init(
+        640,
+				480,
+				//"webAR/DataNFT/Visitenkarte_Webdemo_dancingman",
+				nftPath,
+        "config.json",
+        true
+      )
+        .then((nft) => {
+          nft.addVideo("arvideo", 0.35, 1051, 697);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
 </html>
