@@ -1,6 +1,7 @@
 # ARnft - WebAR with NFT
 
-<img src="examples/Data/arNFT-logo.gif" width="250px"/>
+[Video Testing Index](https://github.com/david-marx/webAR/blob/master/examples/arNFT_video_example.html)
+
 
 A small javascript library to develop WebAR apps. It is based on [jsartoolkitNFT](https://github.com/kalwalt/jsartoolkitnFT) a lighter version of jsartoolkit5 only with **NFT** markerless technology.
 
@@ -24,7 +25,6 @@ http://localhost:8000/examples/arNFT_example.html
 
 :five: &nbsp; Point your device 📱 to the pinball image 👇 a red cube will appear !
 
-<img src= https://raw.githubusercontent.com/artoolkitx/artoolkit5/master/doc/Marker%20images/pinball.jpg width="250"/>
 
 ## Examples
 Test the examples in the `/examples` folder:
