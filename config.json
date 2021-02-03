@@ -1,6 +1,6 @@
 {
   "addPath": "",
-  "cameraPara": "examples/Data/camera_para.dat",
+  "cameraPara": "Data/camera_para.dat",
   "videoSettings": {
     "width": {
       "min": 640,
