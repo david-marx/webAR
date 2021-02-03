@@ -3,12 +3,12 @@
   "cameraPara": "webAR/Data/camera_para.dat",
   "videoSettings": {
     "width": {
-      "min": 640,
-      "max": 800
+      "min": 100,
+      "max": 1600
     },
     "height": {
-      "min": 480,
-      "max": 600
+      "min": 100,
+      "max": 1200
     },
     "facingMode": "environment"
   },
