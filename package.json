@@ -1,5 +1,6 @@
 {
   "name": "@kalwalt/ar-nft",
+  "homepage": "https://david-marx.github.io/webAR",
   "version": "0.8.4",
   "main": "dist/ARnft.js",
   "description": "WebAR Javscript library for markerless AR",
