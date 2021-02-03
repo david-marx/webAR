@@ -26,7 +26,27 @@
         var selImage = document.getElementById("selImage");
         var imagePath = selImage.value;
 				document.getElementById("arvideo").src = imagePath;
+				initializeAR();
       } // end function
+		</script>
+		
+		<script type="text/javascript">
+      function initializeAR() {
+        ARnft.ARnft.init(
+        640,
+				480,
+				//"webAR/DataNFT/Visitenkarte_Webdemo_dancingman",
+				changeNFT(document.getElementById("selImage").value),
+        "config.json",
+        true
+      )
+        .then((nft) => {
+          nft.addVideo("arvideo", 0.35, 1051, 697);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      }
     </script>
 
     <video
@@ -42,7 +62,9 @@
     </video>
 
     <script src="js/third_party/three.js/three.min.js"></script>
-    <script src="dist/ARnft.js"></script>
+		<script src="dist/ARnft.js"></script>
+		
+
 
     <script>
 			function changeNFT(imageSelection) {
@@ -55,21 +77,8 @@
 						return "webAR/DataNFT/Visitenkarte_Webdemo_dancingman";
 				}
       } 
-
-      ARnft.ARnft.init(
-        640,
-				480,
-				//"webAR/DataNFT/Visitenkarte_Webdemo_dancingman",
-				changeNFT(document.getElementById("selImage").value),
-        "config.json",
-        true
-      )
-        .then((nft) => {
-          nft.addVideo("arvideo", 0.35, 1051, 697);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+			initializeAR();
+      
     </script>
   </body>
 </html>
