@@ -1389,7 +1389,7 @@
                         A.camera.fov,
                         A.camera.ratio,
                         A.camera.near,
-                        A.camera.far
+                        A.camera.far*2
                       )
                     : new E.Camera());
             }
