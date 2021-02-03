@@ -14,21 +14,18 @@
       <h3>Please select an Image</h3>
       <fieldset>
         <select id="selImage">
+					<option value="Data/DancingMan.mp4">Dancing Man</option>
           <option value="Data/openpose.mp4">Open Pose Dave</option>
-          <option value="Data/DancingMan.mp4">Dancing Man</option>
         </select>
         <input type="button" value="change image" onclick="changeImage()" />
       </fieldset>
     </form>
 
     <script type="text/javascript">
-      // from dropdownList.html
       function changeImage() {
         var selImage = document.getElementById("selImage");
         var imagePath = selImage.value;
 				document.getElementById("arvideo").src = imagePath;
-
-				imagePath === "Data/DancingMan.mp4" ? changeNFT("webAR/DataNFT/Visitenkarte_Webdemo_dancingman") : changeNFT("webAR/DataNFT/openpose_bw");
       } // end function
     </script>
 
@@ -48,15 +45,22 @@
     <script src="dist/ARnft.js"></script>
 
     <script>
-			function changeNFT(pathNFT) {
-        var nftPath = pathNFT
+			function changeNFT(imageSelection) {
+				switch(imageSelection){
+					case "Data/DancingMan.mp4":
+						return "webAR/DataNFT/Visitenkarte_Webdemo_dancingman";
+					case "Data/openpose.mp4":
+						return "webAR/DataNFT/openpose_bw";
+					default:
+						return "webAR/DataNFT/Visitenkarte_Webdemo_dancingman";
+				}
       } 
 
       ARnft.ARnft.init(
         640,
 				480,
 				//"webAR/DataNFT/Visitenkarte_Webdemo_dancingman",
-				document.getElementById("selImage").value === "Data/DancingMan.mp4" ? "webAR/DataNFT/Visitenkarte_Webdemo_dancingman" : "webAR/DataNFT/openpose_bw",
+				changeNFT(document.getElementById("selImage").value),
         "config.json",
         true
       )
