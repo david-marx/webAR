@@ -23,17 +23,6 @@
     "type": "three",
     "alpha": true,
     "antialias": true,
-    "precision": "mediump",
-    "context": null,
-    "premultipliedAlpha": true,
-    "stencil": true,
-    "depth": true,
-    "logarithmicDepthBuffer": true
-  },
-  "camera": {
-    "fov": "1 * 180 / Math.PI",
-    "ratio": "window.clientWidth / window.clientHeight",
-    "near": 0.001,
-    "far": 10000
+    "precision": "mediump"
   }
 }
